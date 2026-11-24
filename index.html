@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta property="og:title" content="A new logo for Stacktape">
+<meta name="description" content="Draft of the new Stacktape logo. Tell us what you think.">
+<style>body{margin:0}img{max-width:100%}</style>
+<title>Stacktape Logo Draft</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600&family=Montserrat:wght@700&family=Rubik:wght@600;700&family=Space+Grotesk:wght@700&display=swap">
+<style>
+  /* Layout: one centred column; the logo sits on dark "brand plates", the page itself follows the viewer's theme. */
+  :root {
+    --bg: #f4f7f7; --fg: #142021; --muted: #586a6b; --line: #d9e3e3; --panel: #ffffff;
+    --plate: #0d1314; --plate-line: #233033; --plate-ink: #f1f6f6;
+    --teal: #36bebe; --tape: #f2f7f6; --label-ink: #0b1a1a;
+    --light-plate: #ffffff; --light-teal: #22a3a6; --light-tape: #12302f; --light-ink: #10201f;
+    --font-text: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-a: 'Montserrat', system-ui, sans-serif;
+    --font-b: 'Bricolage Grotesque', system-ui, sans-serif;
+    --font-c: 'Space Grotesk', system-ui, sans-serif;
+    --font-d: 'Rubik', system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #0a0f10; --fg: #e8eff0; --muted: #94a6a7; --line: #1f2a2c; --panel: #111819; --light-plate: #f6f9f9; color-scheme: dark; }
+  }
+  :root[data-theme="dark"] { --bg: #0a0f10; --fg: #e8eff0; --muted: #94a6a7; --line: #1f2a2c; --panel: #111819; --light-plate: #f6f9f9; color-scheme: dark; }
+
+  body { background: var(--bg); color: var(--fg); font: 400 15px/1.55 var(--font-text); }
+  .page { max-width: 920px; margin: 0 auto; padding-block: 40px 56px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; flex-direction: column; gap: 36px; }
+  header { display: flex; flex-direction: column; gap: 10px; max-width: 640px; }
+  .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  h1 { margin: 0; font: 700 34px/1.15 var(--font-b); letter-spacing: -0.02em; text-wrap: balance; }
+  h2 { margin: 0; font: 600 13px/1.3 var(--font-text); letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+  p { margin: 0; }
+  .lede { color: var(--muted); font-size: 16px; }
+  section { display: flex; flex-direction: column; gap: 14px; }
+
+  /* The logo itself: "stack" + "tape" printed on a torn tape label. */
+  .long { display: inline-flex; align-items: center; font-weight: 700; letter-spacing: -0.03em; line-height: 1; white-space: nowrap; }
+  .long .label {
+    margin-left: .13em; padding: .17em .36em .21em; transform: rotate(-4deg);
+    background: var(--teal); color: var(--label-ink);
+    clip-path: polygon(.16em 0, calc(100% - .16em) 0, 100% 12.5%, calc(100% - .16em) 25%, 100% 37.5%, calc(100% - .16em) 50%, 100% 62.5%, calc(100% - .16em) 75%, 100% 87.5%, calc(100% - .16em) 100%, .16em 100%, 0 87.5%, .16em 75%, 0 62.5%, .16em 50%, 0 37.5%, .16em 25%, 0 12.5%);
+  }
+  .on-light .long { color: var(--light-ink); }
+  .on-light .long .label { background: var(--light-teal); color: #fff; }
+  .f-a { font-family: var(--font-a); } .f-b { font-family: var(--font-b); } .f-c { font-family: var(--font-c); } .f-d { font-family: var(--font-d); font-weight: 600; }
+
+  .plate { background: var(--plate); border: 1px solid var(--plate-line); color: var(--plate-ink); border-radius: 14px; padding: 28px; display: flex; align-items: center; justify-content: center; min-height: 150px; }
+  .plate.on-light { background: var(--light-plate); border-color: var(--line); }
+  .hero { display: grid; grid-template-columns: 1.6fr 1fr; gap: 12px; }
+  .hero .long { font-size: clamp(40px, 7vw, 64px); }
+  .icons { display: flex; align-items: flex-end; gap: 22px; }
+  .caption { font-size: 13px; color: var(--muted); }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .pair > div { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+
+  /* Where it shows up. */
+  .uses { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .use { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .use .plate { min-height: 110px; padding: 18px; }
+  .tab { display: flex; align-items: center; gap: 8px; background: #263133; color: #e6eded; font: 500 13px var(--font-text); border-radius: 8px 8px 0 0; padding: 8px 14px; align-self: flex-end; margin-bottom: -18px; }
+  .tab .x { opacity: .5; margin-left: 10px; }
+  .nav { display: flex; align-items: center; gap: 18px; width: 100%; }
+  .nav .long { font-size: 22px; }
+  .nav .links { display: flex; gap: 14px; margin-left: auto; font: 500 13px var(--font-text); color: #9fb1b2; }
+  .on-light .nav .links { color: #5d6f70; }
+  .avatar { width: 64px; height: 64px; border-radius: 14px; background: var(--plate); display: grid; place-items: center; border: 1px solid var(--plate-line); }
+
+  /* Lettering options. */
+  .fonts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .font { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+  .font .plate { min-height: 96px; padding: 18px; }
+  .font .long { font-size: 38px; }
+  .font-head { display: flex; align-items: baseline; gap: 10px; }
+  .letter { font: 700 15px var(--font-text); color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 7px; width: 28px; height: 28px; display: grid; place-items: center; flex: none; }
+  .font-head p { font-size: 14px; color: var(--muted); }
+  .font-head b { color: var(--fg); font-weight: 600; }
+
+  .ask { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 12px; }
+  .ask ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 16px; }
+  .ask .caption { font-size: 14px; }
+
+  @media (max-width: 720px) {
+    .hero, .pair, .fonts { grid-template-columns: 1fr; }
+    .uses { grid-template-columns: 1fr; }
+    h1 { font-size: 28px; }
+  }
+</style>
+
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- The icon: three uneven layers held together by one strip of torn tape. -->
+    <symbol id="icon-shape" viewBox="0 0 64 64">
+      <rect x="11" y="10" width="46" height="12" rx="3" fill="var(--icon-slab)"/>
+      <rect x="4" y="26" width="48" height="12" rx="3" fill="var(--icon-slab)"/>
+      <rect x="9" y="42" width="50" height="12" rx="3" fill="var(--icon-slab)"/>
+      <polygon transform="rotate(-4 32 32)" fill="var(--icon-tape)" points="25,2.5 28.21,4.25 30.67,2.5 32.88,4.25 35.33,2.5 37.54,4.25 39,2.5 39,61.5 37.54,59.75 35.33,61.5 32.88,59.75 30.67,61.5 28.21,59.75 25,61.5"/>
+    </symbol>
+  </defs>
+</svg>
+
+<main class="page" style="--icon-slab: var(--teal); --icon-tape: var(--tape)">
+  <header>
+    <span class="eyebrow">Stacktape · logo draft</span>
+    <h1>A new logo for Stacktape</h1>
+    <p class="lede">Stacktape deploys apps and their infrastructure to your own AWS account. On AWS, infrastructure is grouped into "stacks", and the name means "a tape for stacks". So the icon is a stack held together by a strip of tape, and in the full logo "tape" is printed on a piece of tape.</p>
+    <p class="lede">We'd love your honest opinion. There are two quick questions at the bottom.</p>
+  </header>
+
+  <section>
+    <h2>The logo</h2>
+    <div class="hero">
+      <div class="plate"><span class="long f-a">stack<span class="label">tape</span></span></div>
+      <div class="plate">
+        <div class="icons">
+          <svg width="72" height="72"><use href="#icon-shape"/></svg>
+          <svg width="40" height="40"><use href="#icon-shape"/></svg>
+          <svg width="16" height="16"><use href="#icon-shape"/></svg>
+        </div>
+      </div>
+    </div>
+    <div class="pair">
+      <p class="caption">The full logo, for wide places: the website, the docs and the app header.</p>
+      <p class="caption">The icon, for small places, from 72 pixels down to a browser tab.</p>
+    </div>
+    <div class="pair">
+      <div><div class="plate on-light" style="min-height:120px"><span class="long f-a" style="font-size:44px">stack<span class="label">tape</span></span></div></div>
+      <div><div class="plate on-light" style="min-height:120px;--icon-slab: var(--light-teal); --icon-tape: var(--light-tape)">
+        <div class="icons"><svg width="56" height="56"><use href="#icon-shape"/></svg><svg width="32" height="32"><use href="#icon-shape"/></svg><svg width="16" height="16"><use href="#icon-shape"/></svg></div>
+      </div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Where it shows up</h2>
+    <div class="uses">
+      <div class="use">
+        <div class="plate" style="align-items:flex-end"><div class="tab"><svg width="16" height="16"><use href="#icon-shape"/></svg> Stacktape Console <span class="x">✕</span></div></div>
+        <p class="caption">Browser tab</p>
+      </div>
+      <div class="use">
+        <div class="plate"><div class="avatar"><svg width="44" height="44"><use href="#icon-shape"/></svg></div></div>
+        <p class="caption">GitHub, Slack or app-store avatar</p>
+      </div>
+      <div class="use">
+        <div class="plate"><div class="nav"><span class="long f-a">stack<span class="label">tape</span></span><span class="links"><span>Docs</span><span>Pricing</span></span></div></div>
+        <p class="caption">Website and app header</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Four letterings to compare</h2>
+    <div class="fonts">
+      <div class="font">
+        <div class="font-head"><span class="letter">A</span><p><b>Clean and geometric.</b> What the Stacktape app uses today.</p></div>
+        <div class="plate"><span class="long f-a">stack<span class="label">tape</span></span></div>
+      </div>
+      <div class="font">
+        <div class="font-head"><span class="letter">B</span><p><b>More character.</b> Slightly hand-made, like the tape.</p></div>
+        <div class="plate"><span class="long f-b">stack<span class="label">tape</span></span></div>
+      </div>
+      <div class="font">
+        <div class="font-head"><span class="letter">C</span><p><b>Technical.</b> Precise, with a few quirky letters.</p></div>
+        <div class="plate"><span class="long f-c">stack<span class="label">tape</span></span></div>
+      </div>
+      <div class="font">
+        <div class="font-head"><span class="letter">D</span><p><b>Soft and friendly.</b> Rounded, like the layers in the icon.</p></div>
+        <div class="plate"><span class="long f-d">stack<span class="label">tape</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ask">
+    <h2>Two questions</h2>
+    <ol>
+      <li>Do you like the logo? What's the first thing it makes you think of?</li>
+      <li>Which lettering do you like best: A, B, C or D?</li>
+    </ol>
+    <p class="caption">Just reply to whoever sent you this link. Short answers are perfect.</p>
+  </section>
+</main>
+
+</body>
+</html>
